@@ -23,6 +23,7 @@
 
 use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
+use Cake\Routing\Router;
 
 /*
  * This file is loaded in the context of the `Application` class.
@@ -76,6 +77,10 @@ return function (RouteBuilder $routes): void {
          * routes you want in your application.
          */
         $builder->fallbacks();
+    });
+    $routes->prefix('admin', function (RouteBuilder $routes) {
+        $routes->connect('/', ['controller' => 'Usuarios', 'action' => 'index']);
+        $routes->fallbacks(DashedRoute::class);
     });
     /*
      * If you need a different set of middleware or none at all,
