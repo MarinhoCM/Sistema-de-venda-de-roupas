@@ -38,14 +38,8 @@ class ProdutosTable extends Table
         parent::initialize($config);
 
         $this->setTable('produtos');
-        $this->setDisplayField('Nome');
+        $this->setDisplayField('ID');
         $this->setPrimaryKey('ID');
-
-        // Defina a associação com a tabela de vendedores
-        $this->belongsTo('Vendedores', [
-            'foreignKey' => 'IDVendedor',
-            'joinType' => 'INNER'
-        ]);
     }
 
     /**
@@ -59,8 +53,7 @@ class ProdutosTable extends Table
         $validator
             ->scalar('Nome')
             ->maxLength('Nome', 255)
-            ->requirePresence('Nome', 'create')
-            ->notEmptyString('Nome');
+            ->allowEmptyString('Nome');
 
         $validator
             ->scalar('Descricao')
@@ -68,24 +61,20 @@ class ProdutosTable extends Table
 
         $validator
             ->decimal('Preco')
-            ->requirePresence('Preco', 'create')
-            ->notEmptyString('Preco');
+            ->allowEmptyString('Preco');
 
         $validator
             ->scalar('Categoria')
             ->maxLength('Categoria', 100)
-            ->requirePresence('Categoria', 'create')
-            ->notEmptyString('Categoria');
+            ->allowEmptyString('Categoria');
 
         $validator
             ->integer('QuantidadeEstoque')
-            ->requirePresence('QuantidadeEstoque', 'create')
-            ->notEmptyString('QuantidadeEstoque');
+            ->allowEmptyString('QuantidadeEstoque');
 
         $validator
             ->integer('IDVendedor')
-            ->requirePresence('IDVendedor', 'create')
-            ->notEmptyString('IDVendedor');
+            ->allowEmptyString('IDVendedor');
 
         return $validator;
     }

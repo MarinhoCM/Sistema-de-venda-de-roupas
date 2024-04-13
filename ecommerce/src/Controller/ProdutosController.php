@@ -5,7 +5,7 @@ namespace App\Controller;
 
 /**
  * Produtos Controller
- * @property \App\Model\Table\ProdutosTable $Produtos
+ *
  */
 class ProdutosController extends AppController
 {
@@ -16,17 +16,10 @@ class ProdutosController extends AppController
      */
     public function index()
     {
-        $produtos = $this->paginate($this->Produtos);
+        $query = $this->Produtos->find();
+        $produtos = $this->paginate($query);
 
-        // Carregue os IDs dos vendedores dos produtos
-        $idsVendedores = $produtos->extract('IDVendedor')->toArray();
-
-        // Consulte os vendedores associados aos produtos
-        $vendedores = $this->Produtos->Vendedores->find()
-            ->where(['ID IN' => $idsVendedores])
-            ->toArray();
-
-        $this->set(compact('produtos', 'vendedores'));
+        $this->set(compact('produtos'));
     }
 
     /**
@@ -54,6 +47,7 @@ class ProdutosController extends AppController
             $produto = $this->Produtos->patchEntity($produto, $this->request->getData());
             if ($this->Produtos->save($produto)) {
                 $this->Flash->success(__('The produto has been saved.'));
+
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The produto could not be saved. Please, try again.'));

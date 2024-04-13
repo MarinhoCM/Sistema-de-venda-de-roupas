@@ -51,16 +51,9 @@ class AdministradoresTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->scalar('Nome')
-            ->maxLength('Nome', 255)
-            ->requirePresence('Nome', 'create')
-            ->notEmptyString('Nome');
-
-        $validator
             ->scalar('Cargo')
             ->maxLength('Cargo', 100)
-            ->requirePresence('Cargo', 'create')
-            ->notEmptyString('Cargo');
+            ->allowEmptyString('Cargo');
 
         return $validator;
     }

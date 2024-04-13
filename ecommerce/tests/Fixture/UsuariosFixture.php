@@ -24,7 +24,7 @@ class UsuariosFixture extends TestFixture
                 'Email' => 'Lorem ipsum dolor sit amet',
                 'Senha' => 'Lorem ipsum dolor sit amet',
                 'Endereco' => 'Lorem ipsum dolor sit amet',
-                'InformacoesDePagamento' => 'Lorem ipsum dolor sit amet',
+                'InformacoesPagamento' => 'Lorem ipsum dolor sit amet',
             ],
         ];
         parent::init();

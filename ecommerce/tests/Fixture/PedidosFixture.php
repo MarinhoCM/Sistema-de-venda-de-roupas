@@ -21,7 +21,7 @@ class PedidosFixture extends TestFixture
             [
                 'IDPedido' => 1,
                 'IDUsuario' => 1,
-                'DataPedido' => '2024-04-13',
+                'DataPedido' => '2024-04-12',
                 'StatusPedido' => 'Lorem ipsum dolor sit amet',
                 'Total' => 1.5,
             ],

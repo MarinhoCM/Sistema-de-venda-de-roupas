@@ -9,8 +9,7 @@ use Cake\ORM\Entity;
  * Administradore Entity
  *
  * @property int $ID
- * @property string $Nome
- * @property string $Cargo
+ * @property string|null $Cargo
  */
 class Administradore extends Entity
 {
@@ -24,7 +23,6 @@ class Administradore extends Entity
      * @var array<string, bool>
      */
     protected array $_accessible = [
-        'Nome' => true,
         'Cargo' => true,
     ];
 }

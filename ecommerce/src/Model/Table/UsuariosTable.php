@@ -53,8 +53,7 @@ class UsuariosTable extends Table
         $validator
             ->scalar('Nome')
             ->maxLength('Nome', 100)
-            ->requirePresence('Nome', 'create')
-            ->notEmptyString('Nome');
+            ->allowEmptyString('Nome');
 
         $validator
             ->scalar('Email')
@@ -65,8 +64,7 @@ class UsuariosTable extends Table
         $validator
             ->scalar('Senha')
             ->maxLength('Senha', 100)
-            ->requirePresence('Senha', 'create')
-            ->notEmptyString('Senha');
+            ->allowEmptyString('Senha');
 
         $validator
             ->scalar('Endereco')
@@ -74,9 +72,9 @@ class UsuariosTable extends Table
             ->allowEmptyString('Endereco');
 
         $validator
-            ->scalar('InformacoesDePagamento')
-            ->maxLength('InformacoesDePagamento', 255)
-            ->allowEmptyString('InformacoesDePagamento');
+            ->scalar('InformacoesPagamento')
+            ->maxLength('InformacoesPagamento', 255)
+            ->allowEmptyString('InformacoesPagamento');
 
         return $validator;
     }

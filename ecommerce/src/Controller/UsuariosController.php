@@ -6,7 +6,6 @@ namespace App\Controller;
 /**
  * Usuarios Controller
  *
- * @property \App\Model\Table\UsuariosTable $Usuarios
  */
 class UsuariosController extends AppController
 {

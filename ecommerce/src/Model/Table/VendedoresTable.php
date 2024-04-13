@@ -51,16 +51,9 @@ class VendedoresTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->scalar('Nome')
-            ->maxLength('Nome', 255)
-            ->requirePresence('Nome', 'create')
-            ->notEmptyString('Nome');
-
-        $validator
-            ->scalar('Turno')
-            ->maxLength('Turno', 255)
-            ->requirePresence('Turno', 'create')
-            ->notEmptyString('Turno');
+            ->scalar('InformacoesEspecificas')
+            ->maxLength('InformacoesEspecificas', 255)
+            ->allowEmptyString('InformacoesEspecificas');
 
         return $validator;
     }

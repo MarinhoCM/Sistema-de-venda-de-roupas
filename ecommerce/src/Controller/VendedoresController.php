@@ -6,7 +6,6 @@ namespace App\Controller;
 /**
  * Vendedores Controller
  *
- * @property \App\Model\Table\VendedoresTable $Vendedores
  */
 class VendedoresController extends AppController
 {
