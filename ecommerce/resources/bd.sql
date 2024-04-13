@@ -1,0 +1,58 @@
+CREATE TABLE Usuarios (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) UNIQUE,
+    Senha VARCHAR(100) NOT NULL,
+    Endereco VARCHAR(255),
+    InformacoesDePagamento VARCHAR(255)
+);
+CREATE TABLE Vendedores (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Turno VARCHAR(255) NOT NULL,
+    FOREIGN KEY (ID) REFERENCES Usuarios(ID)
+);
+CREATE TABLE Administradores (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Cargo VARCHAR(100) NOT NULL,
+    FOREIGN KEY (ID) REFERENCES Usuarios(ID)
+);
+CREATE TABLE Produtos (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Descricao TEXT NOT NULL,
+    Preco DECIMAL(10, 2) NOT NULL,
+    Categoria VARCHAR(100) NOT NULL,
+    QuantidadeEstoque INT NOT NULL,
+    IDVendedor INT,
+    FOREIGN KEY (IDVendedor) REFERENCES Vendedores(ID)
+);
+CREATE TABLE CarrinhoDeCompras (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    IDUsuario INT,
+    IDProduto INT,
+    Quantidade INT,
+    FOREIGN KEY (IDUsuario) REFERENCES Usuarios(ID),
+    FOREIGN KEY (IDProduto) REFERENCES Produtos(ID)
+);
+CREATE TABLE Pedidos (
+    IDPedido INT AUTO_INCREMENT PRIMARY KEY,
+    IDUsuario INT,
+    DataPedido DATE,
+    StatusPedido VARCHAR(50),
+    Total DECIMAL(10, 2),
+    FOREIGN KEY (IDUsuario) REFERENCES Usuarios(ID)
+);
+
+-- SELECT
+--     TABLE_NAME,
+--     CONSTRAINT_NAME,
+--     COLUMN_NAME,
+--     REFERENCED_TABLE_NAME,
+--     REFERENCED_COLUMN_NAME
+-- FROM
+--     INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+-- WHERE
+--     REFERENCED_TABLE_SCHEMA = 'ecommerce'
+--     AND REFERENCED_TABLE_NAME = 'tabela_a_ser_apagada';

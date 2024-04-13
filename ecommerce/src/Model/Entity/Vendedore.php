@@ -9,7 +9,8 @@ use Cake\ORM\Entity;
  * Vendedore Entity
  *
  * @property int $ID
- * @property string|null $InformacoesEspecificas
+ * @property string $Nome
+ * @property string $Turno
  */
 class Vendedore extends Entity
 {
@@ -23,6 +24,7 @@ class Vendedore extends Entity
      * @var array<string, bool>
      */
     protected array $_accessible = [
-        'InformacoesEspecificas' => true,
+        'Nome' => true,
+        'Turno' => true,
     ];
 }

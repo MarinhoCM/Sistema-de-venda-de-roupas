@@ -9,11 +9,11 @@ use Cake\ORM\Entity;
  * Usuario Entity
  *
  * @property int $ID
- * @property string|null $Nome
+ * @property string $Nome
  * @property string|null $Email
- * @property string|null $Senha
+ * @property string $Senha
  * @property string|null $Endereco
- * @property string|null $InformacoesPagamento
+ * @property string|null $InformacoesDePagamento
  */
 class Usuario extends Entity
 {
@@ -31,6 +31,6 @@ class Usuario extends Entity
         'Email' => true,
         'Senha' => true,
         'Endereco' => true,
-        'InformacoesPagamento' => true,
+        'InformacoesDePagamento' => true,
     ];
 }

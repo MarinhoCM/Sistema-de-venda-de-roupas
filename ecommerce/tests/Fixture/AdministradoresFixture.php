@@ -20,6 +20,7 @@ class AdministradoresFixture extends TestFixture
         $this->records = [
             [
                 'ID' => 1,
+                'Nome' => 'Lorem ipsum dolor sit amet',
                 'Cargo' => 'Lorem ipsum dolor sit amet',
             ],
         ];

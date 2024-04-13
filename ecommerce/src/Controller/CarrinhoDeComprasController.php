@@ -6,6 +6,7 @@ namespace App\Controller;
 /**
  * CarrinhoDeCompras Controller
  *
+ * @property \App\Model\Table\CarrinhoDeComprasTable $CarrinhoDeCompras
  */
 class CarrinhoDeComprasController extends AppController
 {

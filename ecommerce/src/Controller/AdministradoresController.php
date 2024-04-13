@@ -6,6 +6,7 @@ namespace App\Controller;
 /**
  * Administradores Controller
  *
+ * @property \App\Model\Table\AdministradoresTable $Administradores
  */
 class AdministradoresController extends AppController
 {

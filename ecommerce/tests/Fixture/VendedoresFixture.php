@@ -20,7 +20,8 @@ class VendedoresFixture extends TestFixture
         $this->records = [
             [
                 'ID' => 1,
-                'InformacoesEspecificas' => 'Lorem ipsum dolor sit amet',
+                'Nome' => 'Lorem ipsum dolor sit amet',
+                'Turno' => 'Lorem ipsum dolor sit amet',
             ],
         ];
         parent::init();

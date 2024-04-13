@@ -9,12 +9,12 @@ use Cake\ORM\Entity;
  * Produto Entity
  *
  * @property int $ID
- * @property string|null $Nome
+ * @property string $Nome
  * @property string|null $Descricao
- * @property string|null $Preco
- * @property string|null $Categoria
- * @property int|null $QuantidadeEstoque
- * @property int|null $IDVendedor
+ * @property string $Preco
+ * @property string $Categoria
+ * @property int $QuantidadeEstoque
+ * @property int $IDVendedor
  */
 class Produto extends Entity
 {
@@ -34,5 +34,6 @@ class Produto extends Entity
         'Categoria' => true,
         'QuantidadeEstoque' => true,
         'IDVendedor' => true,
+        '*' => false,
     ];
 }

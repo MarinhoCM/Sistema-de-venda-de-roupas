@@ -6,6 +6,7 @@ namespace App\Controller;
 /**
  * Pedidos Controller
  *
+ * @property \App\Model\Table\PedidosTable $Pedidos
  */
 class PedidosController extends AppController
 {
