@@ -30,7 +30,7 @@
                         <td><?= h($produto->Categoria) ?></td>
                         <td><?= $this->Number->format($produto->QuantidadeEstoque) ?></td>
                         <?php if ($produto->IDVendedor === null): ?>
-                            <td>Sem vendedor responsável, verifique o cadastro.</td>
+                            <td>Sem vendedor responsável</td>
                         <?php else: ?>
                             <?php $vendedorEncontrado = false; ?>
                             <?php foreach ($vendedores as $vendedor): ?>
